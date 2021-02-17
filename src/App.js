@@ -6,8 +6,10 @@ import Header from "./Components/Header";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Home />
+      <Router>
+        <Header />
+      </Router>
+      {/* <Home /> */}
     </div>
   );
 }
