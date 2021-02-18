@@ -7,7 +7,9 @@ import { IconButton, InputBase } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import "../Styles/header.css";
-function Header() {
+function Header(props) {
+  const { user = false, basket = [] } = props;
+  const handleAuthenticaton = () => {};
   return (
     <div className="header">
       <Link to="/">
@@ -24,7 +26,7 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        {/* <Link to={!user && "/login"}>
+        <Link to={!user && "/login"}>
           <div onClick={handleAuthenticaton} className="header__option">
             <span className="header__optionLineOne">
               Hello {!user ? "Guest" : user.email}
@@ -33,7 +35,7 @@ function Header() {
               {user ? "Sign Out" : "Sign In"}
             </span>
           </div>
-        </Link> */}
+        </Link>
 
         <Link to="/orders">
           <div className="header__option">
@@ -51,7 +53,7 @@ function Header() {
           <div className="header__optionBasket">
             <ShoppingBasketIcon />
             <span className="header__optionLineTwo header__basketCount">
-              {/* {basket?.length} */}
+              {basket?.length}
             </span>
           </div>
         </Link>
